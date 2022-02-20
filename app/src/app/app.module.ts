@@ -7,14 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { SortComponent } from './sort/sort.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDesignModule } from './material-design/material-design.module';
-import { FlexLayoutComponent } from './flex-layout/flex-layout.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SortComponent,
-    FlexLayoutComponent
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
