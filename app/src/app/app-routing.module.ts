@@ -5,7 +5,8 @@ import { HomeComponent } from './home/home.component'
 import { SortComponent } from './sort/sort.component';
 
 const routes: Routes = [
-  { path:'', component: HomeComponent },
+  { path:'', redirectTo:'/home', pathMatch: 'full' },
+  { path:'home', component: HomeComponent },
   { path:'sort', component: SortComponent }
 ];
 
