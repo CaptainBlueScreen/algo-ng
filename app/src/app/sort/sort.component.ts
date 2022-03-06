@@ -17,4 +17,16 @@ export class SortComponent implements OnInit {
     this.arr = Array.from({length: this.length}, (v,k) => k+1);
   }
 
+  randomize() {
+    for(let i=0; i< this.arr.length; i++){
+      this.swap(i, Math.floor(Math.random()*this.length))
+    }
+  }
+
+  swap(i:number, j:number) {
+    let temp = this.arr[i];
+    this.arr[i] = this.arr[j]
+    this.arr[j] = temp;
+  }
+
 }
