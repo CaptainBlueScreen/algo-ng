@@ -8,6 +8,7 @@ import { CanvasComponent } from './canvas/canvas.component';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select'
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { MatSelectModule } from '@angular/material/select'
     CommonModule,
     FormsModule,
     SortRoutingModule,
+    MatButtonModule,
     MatInputModule,
     MatSelectModule
   ]
