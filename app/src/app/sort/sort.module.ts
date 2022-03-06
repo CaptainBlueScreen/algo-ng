@@ -6,6 +6,9 @@ import { SortComponent } from './sort.component';
 import { SortRoutingModule } from './sort-routing.module';
 import { CanvasComponent } from './canvas/canvas.component';
 
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select'
+
 
 @NgModule({
   declarations: [
@@ -15,7 +18,9 @@ import { CanvasComponent } from './canvas/canvas.component';
   imports: [
     CommonModule,
     FormsModule,
-    SortRoutingModule
+    SortRoutingModule,
+    MatInputModule,
+    MatSelectModule
   ]
 })
 export class SortModule { }

@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sort.component.scss']
 })
 export class SortComponent implements OnInit {
-  length: number = 10;
+  lengths: number[] = [ 10, 50, 100, 500, 1000, 5000, 10000 ];
+  length: number;
   arr: number[];
 
   ngOnInit(): void {

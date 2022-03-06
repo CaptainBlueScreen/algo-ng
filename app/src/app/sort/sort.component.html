@@ -1,3 +1,12 @@
-<input type="number" [(ngModel)]="length" (change)="changeLength()">
+<form>
+    <mat-form-field appearance="fill">
+      <mat-label>Number of elements:</mat-label>
+      <mat-select [(ngModel)]="length" (selectionChange)="changeLength()" name="length">
+        <mat-option *ngFor="let length of lengths" [value]="length">
+          {{length}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
 <button (click)="randomize()">Randomize</button>
 <app-canvas [arr]="arr"></app-canvas>
