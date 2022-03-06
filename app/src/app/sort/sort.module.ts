@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SortComponent } from './sort.component';
+import { FormsModule } from '@angular/forms';
 
+import { SortComponent } from './sort.component';
 import { SortRoutingModule } from './sort-routing.module';
 import { CanvasComponent } from './canvas/canvas.component';
 
@@ -13,6 +14,7 @@ import { CanvasComponent } from './canvas/canvas.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     SortRoutingModule
   ]
 })
