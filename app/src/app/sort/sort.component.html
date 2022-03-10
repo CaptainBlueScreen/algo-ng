@@ -7,7 +7,7 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
+    <button mat-raised-button color="primary" (click)="randomize()">Randomize</button>
   </form>
-<button mat-raised-button color="primary" (click)="randomize()">Randomize</button>
 
-<app-canvas [arr]="arr"></app-canvas>
+<app-canvas *ngIf="length" [arr]="arr"></app-canvas>

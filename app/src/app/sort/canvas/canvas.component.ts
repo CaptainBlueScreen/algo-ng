@@ -1,53 +1,43 @@
-import { Component, OnInit, ElementRef, NgZone, OnDestroy, Input} from '@angular/core';
-import { ViewportRuler } from '@angular/cdk/scrolling';
-// import * as p5 from 'p5';
+import { Component, OnInit, ElementRef, Input} from '@angular/core';
+import * as p5 from 'p5';
 
 @Component({
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
   styleUrls: ['./canvas.component.scss']
 })
-export class CanvasComponent implements OnInit, OnDestroy {
+export class CanvasComponent implements OnInit {
   @Input() arr:number[];
-  // private canvas: p5;
-  private readonly viewportChange = this.viewportRuler
-    .change(200)
-    .subscribe(() => this.ngZone.run(() => this.setSize()));
 
-  constructor(
-    private el: ElementRef,
-    private readonly viewportRuler: ViewportRuler,
-    private readonly ngZone: NgZone
-  ) {
-  }
+  constructor( private el: ElementRef ) { }
 
   ngOnInit() {
-    // console.log("OnInit");
-    // this.canvas = new p5(p => {
-    //   let x = 200;
-    //   let y = 100;
+    new p5(p => {
 
-    //   p.setup = () => {
-    //     p.createCanvas(500, 500);
-    //   };
+      p.setup = () => {
+        p.createCanvas(500, 500);
+      };
 
-    //   p.draw = () => {
-    //     p.background(0);
-    //     p.fill(255);
-    //     p.rect(x, y, 50, 50);
-    //   };
-    // }, 
-    // this.el.nativeElement);
+      p.draw = () => {
+        p.background(0);
+        this.drawPoints(p);
+      };
 
-    // this.setSize();
+      p.windowResized = () => {
+        console.log("resized");
+      }
+    },
+
+    this.el.nativeElement);
   }
+  
 
-  ngOnDestroy() {
-    this.viewportChange.unsubscribe();
-  }
+  drawPoints(p: any) {
+    p.strokeWeight(5);
+    p.stroke('purple');
 
-  private setSize() {
-    const { width, height } = this.viewportRuler.getViewportSize();
-    // this.canvas.resizeCanvas(width - 10, height - 10);
+    for(let i = 0; i<this.arr.length; i++) {
+      p.point(i, this.arr[i]);
+    }
   }
 }
