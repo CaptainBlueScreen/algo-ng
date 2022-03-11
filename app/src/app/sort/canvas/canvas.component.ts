@@ -35,9 +35,12 @@ export class CanvasComponent implements OnInit {
   drawPoints(p: any) {
     p.strokeWeight(5);
     p.stroke('purple');
-
-    for(let i = 0; i<this.arr.length; i++) {
-      p.point(i, this.arr[i]);
+    
+    if (this.arr)
+    {
+      for(let i = 0; i<this.arr.length; i++) {
+        p.point(i, this.arr[i]);
+      }
     }
   }
 }

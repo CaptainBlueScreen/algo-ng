@@ -1,18 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sort',
   templateUrl: './sort.component.html',
   styleUrls: ['./sort.component.scss']
 })
-export class SortComponent implements OnInit {
-  lengths: number[] = [ 10, 50, 100, 500, 1000, 5000, 10000 ];
-  length: number;
+export class SortComponent {
+  lengths: number[] = [ 50, 100, 500, 1000, 5000, 10000 ];
+  length = this.lengths[0];
   arr: number[];
-
-  ngOnInit(): void {
-    this.changeLength();
-  }
 
   changeLength() {
     this.arr = Array.from({length: this.length}, (v,k) => k+1);
