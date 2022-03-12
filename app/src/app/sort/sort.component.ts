@@ -7,8 +7,12 @@ import { Component } from '@angular/core';
 })
 export class SortComponent {
   lengths: number[] = [ 50, 100, 500, 1000, 5000, 10000 ];
-  length = this.lengths[0];
+  length: number = this.lengths[0];
   arr: number[];
+
+  constructor() {
+    this.changeLength();
+  }
 
   changeLength() {
     this.arr = Array.from({length: this.length}, (v,k) => k+1);
